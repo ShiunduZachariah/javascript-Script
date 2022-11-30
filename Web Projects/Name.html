@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Full Name</title>
+<link rel="stylesheet" href="Name.css">
+</head>
+<body>
+  <div class="container" font-color="black">
+    <div class="form">
+      <label for="fname">FULL NAME:</label><br>
+      <input type="text" placeholder="Enter FullName" id="myInput">
+      <button type="button" onclick="getName();">Enter FullName</button>
+      <label for="firstNameOutput">First Name: </label><input type="textbox" id="firstNameOutput"></input>
+      <label for="secondNameOutput">Second Name: </label><input type="textbox" id="secondNameOutput"></input>
+      <label for="lastNameOutput">Last Name: </label><input type="textbox" id="lastNameOutput"></input>
+      
+      <script>
+          function getName(){
+              // Changing FullName from String to Array.
+              var fName = document.getElementById("myInput").value;
+              var fArray = fName.split(" ");
+              var firstname = fArray[0]; 
+              var secondname = fArray[1]; 
+              var lastname = fArray[fArray.length - 1];
+              
+              if (fArray.length < 2){
+                alert("Enter Your Full Name");
+              }
+              else if(fArray.length == 2)
+              {
+                // Displaying the firstname
+               // alert(firstname);
+               document.getElementById('firstNameOutput').value = firstname;
+               document.getElementById('lastNameOutput').value = secondname;
+               
+              }
+              else if(fArray.length > 2)
+                            {
+              
+              document.getElementById('firstNameOutput').value = firstname;
+               document.getElementById('secondNameOutput').value = secondname;
+               document.getElementById('lastNameOutput').value = lastname;
+          }
+        } 
+      </script>
+    </div>
+    
+  </div>
+   
+</body>
+</html>
